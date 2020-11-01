@@ -4,14 +4,13 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NLayerProject.Core.Repositories
+namespace NLayerProject.Core.Services
 {
-    public interface IRepository<TEntity> where TEntity:class
+    public interface IService<TEntity> where TEntity:class
     {
         Task<TEntity> GetByIdAysnc(int Id);
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate);
-
 
         //for ex: category.SingleOrDefaultAsync(x=>x.name="whatever");
         Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
