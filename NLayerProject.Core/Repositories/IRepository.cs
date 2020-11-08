@@ -10,7 +10,7 @@ namespace NLayerProject.Core.Repositories
     {
         Task<TEntity> GetByIdAysnc(int Id);
         Task<IEnumerable<TEntity>> GetAllAsync();
-        IEnumerable<TEntity> Where(Expression<Func<TEntity, bool>> predicate);
+        Task<IEnumerable<TEntity>> Where(Expression<Func<TEntity, bool>> predicate);
 
 
         //for ex: category.SingleOrDefaultAsync(x=>x.name="whatever");
