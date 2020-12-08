@@ -12,5 +12,9 @@ namespace NLayerProject.API.DTOs
         public string Name { get; set; }
         [Range(1, int.MaxValue, ErrorMessage = "{0} field value must bigger than 1.")]
         public int Stock { get; set; }
+
+        public decimal Price { get; set; }
+
+        public int CategoryId { get; set; }
     }
 }
