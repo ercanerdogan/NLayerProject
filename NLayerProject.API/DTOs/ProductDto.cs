@@ -9,8 +9,9 @@ namespace NLayerProject.API.DTOs
     public class ProductDto
     {
         public int Id { get; set; }
+        [Required(ErrorMessage ="{0} field is required")]
         public string Name { get; set; }
-        [Range(1, int.MaxValue, ErrorMessage = "{0} field value must bigger than 1.")]
+        [Range(1, int.MaxValue, ErrorMessage = "{0} field value must be bigger than 1.")]
         public int Stock { get; set; }
 
         public decimal Price { get; set; }
