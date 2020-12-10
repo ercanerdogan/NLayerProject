@@ -33,7 +33,7 @@ namespace NLayerProject.API.Controllers
             return Ok(_mappper.Map<IEnumerable<ProductDto>>(products));
         }
 
-
+        [ServiceFilter(typeof(NotFoundFilter))]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -58,6 +58,7 @@ namespace NLayerProject.API.Controllers
             return NoContent();
         }
 
+        [ServiceFilter(typeof(NotFoundFilter))]
         [HttpDelete("{id}")]
         public IActionResult Remove(int id)
         {
@@ -68,6 +69,7 @@ namespace NLayerProject.API.Controllers
 
         }
 
+        [ServiceFilter(typeof(NotFoundFilter))]
         [HttpGet("{id}/category")]
         public async Task<IActionResult> GetWithCategoryByPrductId(int id)
         {

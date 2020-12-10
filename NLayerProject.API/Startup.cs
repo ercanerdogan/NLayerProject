@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLayerProject.API.Filters;
 using NLayerProject.Core.Repositories;
 using NLayerProject.Core.Services;
 using NLayerProject.Core.UnitOfWorks;
@@ -35,6 +36,7 @@ namespace NLayerProject.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<NotFoundFilter>();
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IService<>), typeof(Service.Services.Service<>));
@@ -51,6 +53,15 @@ namespace NLayerProject.API
             });
 
             services.AddControllers();
+
+            /*if we don't want to add validationfilter to each controller or method 
+              and if we want to add globally this option could set.
+
+                services.AddControllers(options=> {
+                options.Filters.Add(new ValidationFilter());
+            });
+
+             */
 
             //for validationFilter
             services.Configure<ApiBehaviorOptions>(options =>
