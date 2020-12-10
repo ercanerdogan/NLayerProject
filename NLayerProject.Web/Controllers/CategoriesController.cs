@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using NLayerProject.Core.Models;
 using NLayerProject.Core.Services;
 using NLayerProject.Web.DTOs;
+using NLayerProject.Web.Filters;
 
 namespace NLayerProject.Web.Controllers
 {
@@ -41,6 +42,7 @@ namespace NLayerProject.Web.Controllers
 
         }
 
+        [ServiceFilter(typeof(NotFoundFilter))]
         public async Task<IActionResult> Update(int Id)
         {
             var category = await _categoryService.GetByIdAysnc(Id);
@@ -58,7 +60,7 @@ namespace NLayerProject.Web.Controllers
             
         }
 
-
+        [ServiceFilter(typeof(NotFoundFilter))]
         public IActionResult Delete(int Id)
         {
             var category = _categoryService.GetByIdAysnc(Id).Result;

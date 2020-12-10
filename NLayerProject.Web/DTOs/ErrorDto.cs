@@ -8,7 +8,7 @@ namespace NLayerProject.Web.DTOs
     public class ErrorDto
     {
         public List<string> Errors { get; set; }
-        public int Status { get; set; }
+        public int StatusCode { get; set; }
         public ErrorDto()
         {
             Errors = new List<string>();
