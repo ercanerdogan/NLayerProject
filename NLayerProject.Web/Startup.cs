@@ -18,6 +18,7 @@ using NLayerProject.Data.Repositories;
 using NLayerProject.Data.UnitOfWorks;
 using NLayerProject.Service.Services;
 using NLayerProject.Web.Filters;
+using NLayerProject.Web.Extensions;
 
 namespace NLayerProject.Web
 {
@@ -67,6 +68,10 @@ namespace NLayerProject.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseCustomException();
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

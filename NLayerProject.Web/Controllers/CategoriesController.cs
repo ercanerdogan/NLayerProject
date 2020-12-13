@@ -45,6 +45,8 @@ namespace NLayerProject.Web.Controllers
         [ServiceFilter(typeof(NotFoundFilter))]
         public async Task<IActionResult> Update(int Id)
         {
+            //throw new Exception("Test Global error handling");
+
             var category = await _categoryService.GetByIdAysnc(Id);
 
             return View(_mapper.Map<CategoryDto>(category));

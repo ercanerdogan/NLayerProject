@@ -28,6 +28,8 @@ namespace NLayerProject.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
+            //throw new Exception("Test global error handling");
+
             var products = await _productService.GetAllAsync();
 
             return Ok(_mappper.Map<IEnumerable<ProductDto>>(products));
