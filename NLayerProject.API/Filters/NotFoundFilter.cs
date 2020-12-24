@@ -21,7 +21,7 @@ namespace NLayerProject.API.Filters
         public async override Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
             int id = (int)context.ActionArguments.Values.FirstOrDefault();
-            var product = await _productService.GetByIdAysnc(id);
+            var product = await _productService.GetByIdAsync(id);
 
             if (product != null)
             {

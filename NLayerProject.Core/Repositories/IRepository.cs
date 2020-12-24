@@ -8,7 +8,7 @@ namespace NLayerProject.Core.Repositories
 {
     public interface IRepository<TEntity> where TEntity:class
     {
-        Task<TEntity> GetByIdAysnc(int Id);
+        Task<TEntity> GetByIdAsync(int Id);
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<IEnumerable<TEntity>> Where(Expression<Func<TEntity, bool>> predicate);
 

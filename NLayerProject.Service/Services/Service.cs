@@ -46,9 +46,9 @@ namespace NLayerProject.Service.Services
             return await _repository.GetAllAsync();
         }
 
-        public async Task<TEntity> GetByIdAysnc(int Id)
+        public async Task<TEntity> GetByIdAsync(int Id)
         {
-            return await _repository.GetByIdAysnc(Id);
+            return await _repository.GetByIdAsync(Id);
         }
 
         public void Remove(TEntity entity)

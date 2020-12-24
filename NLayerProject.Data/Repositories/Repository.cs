@@ -40,7 +40,7 @@ namespace NLayerProject.Data.Repositories
             return await _dbSet.ToListAsync();
         }
 
-        public async Task<TEntity> GetByIdAysnc(int Id)
+        public async Task<TEntity> GetByIdAsync(int Id)
         {
             return await _dbSet.FindAsync(Id);
         }

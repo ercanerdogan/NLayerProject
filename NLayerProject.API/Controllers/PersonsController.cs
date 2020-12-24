@@ -36,7 +36,7 @@ namespace NLayerProject.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var person = await _personService.GetByIdAysnc(id);
+            var person = await _personService.GetByIdAsync(id);
             return Ok(_mapper.Map<PersonDto>(person));
         }
 
@@ -59,7 +59,7 @@ namespace NLayerProject.API.Controllers
         [HttpDelete("{id}")]
         public IActionResult Remove(int id)
         {
-            var person = _personService.GetByIdAysnc(id).Result;
+            var person = _personService.GetByIdAsync(id).Result;
 
             _personService.Remove(person);
 

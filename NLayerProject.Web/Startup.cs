@@ -6,17 +6,9 @@ using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NLayerProject.Core.Repositories;
-using NLayerProject.Core.Services;
-using NLayerProject.Core.UnitOfWorks;
-using NLayerProject.Data;
-using NLayerProject.Data.Repositories;
-using NLayerProject.Data.UnitOfWorks;
-using NLayerProject.Service.Services;
 using NLayerProject.Web.Filters;
 using NLayerProject.Web.Extensions;
 using NLayerProject.Web.ApiServices;
@@ -43,18 +35,20 @@ namespace NLayerProject.Web
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<NotFoundFilter>();
 
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped(typeof(IService<>), typeof(Service<>));
-            services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<IProductService, ProductService>();
+            //these operations were delegated to api project
 
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            //services.AddScoped(typeof(IService<>), typeof(Service<>));
+            //services.AddScoped<ICategoryService, CategoryService>();
+            //services.AddScoped<IProductService, ProductService>();
 
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseSqlServer(Configuration["ConnectionStrings:SqlServerInfo"].ToString(),
-                    sqlserveroptions => sqlserveroptions.MigrationsAssembly("NLayerProject.Data"));
-            });
+            //services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            //services.AddDbContext<AppDbContext>(options =>
+            //{
+            //    options.UseSqlServer(Configuration["ConnectionStrings:SqlServerInfo"].ToString(),
+            //        sqlserveroptions => sqlserveroptions.MigrationsAssembly("NLayerProject.Data"));
+            //});
 
 
 

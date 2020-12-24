@@ -9,10 +9,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\NLayerProject.Service\NLayerProject.Service.csproj" />
-  </ItemGroup>
-
 
 
 </Project>
