@@ -1,5 +1,5 @@
 # NLayerProject
-This repository has consisted of a sample project which explains the topics in the below list 
+This repository has consisted of a sample solution which explains the topics in the below list 
 
 - n-tier Architecture,
 - Asp.Net Core API Project,
