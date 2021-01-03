@@ -12,7 +12,7 @@ namespace NLayerProject.API.DTOs
             Errors = new List<string>();
         }
 
-        public List<String> Errors { get; set; }
+        public List<string> Errors { get; set; }
         public int StatusCode { get; set; }
     }
 }
